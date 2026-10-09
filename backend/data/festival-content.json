@@ -1,0 +1,238 @@
+{
+  "gallery": [
+    {
+      "id": "gallery-1",
+      "src": "/images/gallery/img1.jpg",
+      "type": "Images",
+      "title": "Ammavari Alankaram",
+      "description": "Divine Ammavari alankaram",
+      "highlight": true
+    },
+    {
+      "id": "gallery-2",
+      "src": "/images/gallery/img2.jpg",
+      "type": "Images",
+      "title": "Sacred Puja",
+      "description": "Sacred festival puja",
+      "highlight": true
+    },
+    {
+      "id": "gallery-3",
+      "src": "/images/gallery/img3.jpg",
+      "type": "Images",
+      "title": "Festival Gathering",
+      "description": "Devotees at the festival",
+      "highlight": true
+    },
+    {
+      "id": "gallery-4",
+      "src": "/images/gallery/img4.jpg",
+      "type": "Images",
+      "title": "Divine Darshan",
+      "description": "Ammavari divine darshan",
+      "highlight": true
+    },
+    {
+      "id": "gallery-5",
+      "src": "/videos/gallery/p.mp4",
+      "type": "Videos",
+      "title": "Evening Harathi",
+      "description": "Evening harathi video",
+      "highlight": true
+    },
+    {
+      "id": "gallery-6",
+      "src": "/videos/gallery/bajana.mp4",
+      "type": "Videos",
+      "title": "Bhajana Seva",
+      "description": "Devotional bhajana seva",
+      "highlight": true
+    }
+  ],
+  "bhavani": [
+    {
+      "id": "member-1",
+      "name": "Chinni Rambabu",
+      "details": "Devotional seva",
+      "photo": "/images/avatars/default-avatar.svg"
+    },
+    {
+      "id": "member-2",
+      "name": "Majji Appala Naidu",
+      "details": "Devotional seva",
+      "photo": "/images/avatars/default-avatar.svg"
+    },
+    {
+      "id": "member-3",
+      "name": "Nethala Rohit",
+      "details": "Devotional seva",
+      "photo": "/images/avatars/default-avatar.svg"
+    },
+    {
+      "id": "member-4",
+      "name": "Pitta Rohit",
+      "details": "Devotional seva",
+      "photo": "/images/avatars/default-avatar.svg"
+    },
+    {
+      "id": "member-5",
+      "name": "Laveti Achuthrao",
+      "details": "Devotional seva",
+      "photo": "/images/avatars/default-avatar.svg"
+    },
+    {
+      "id": "member-6",
+      "name": "Ragolu Pradeep",
+      "details": "Devotional seva",
+      "photo": "/images/avatars/default-avatar.svg"
+    },
+    {
+      "id": "member-7",
+      "name": "Bodduru Ramarao",
+      "details": "Devotional seva",
+      "photo": "/images/avatars/default-avatar.svg"
+    },
+    {
+      "id": "member-8",
+      "name": "Bodduru Manikanta",
+      "details": "Devotional seva",
+      "photo": "/images/avatars/default-avatar.svg"
+    },
+    {
+      "id": "member-9",
+      "name": "Pisiniki Ramu",
+      "details": "Devotional seva",
+      "photo": "/images/avatars/default-avatar.svg"
+    },
+    {
+      "id": "member-10",
+      "name": "Majji Ramesh",
+      "details": "Devotional seva",
+      "photo": "/images/avatars/default-avatar.svg"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "account-1",
+      "label": "2022",
+      "labelTe": "2022",
+      "amount": 15000
+    },
+    {
+      "id": "account-2",
+      "label": "2023",
+      "labelTe": "2023",
+      "amount": 13000
+    },
+    {
+      "id": "account-3",
+      "label": "2024",
+      "labelTe": "2024",
+      "amount": 18100
+    },
+    {
+      "id": "account-4",
+      "label": "2025",
+      "labelTe": "2025",
+      "amount": 15000
+    },
+    {
+      "id": "account-5",
+      "label": "2025 (Ganesh Pooja)",
+      "labelTe": "2025 (గణేష్ పూజ)",
+      "amount": 4000
+    }
+  ],
+  "nightPrograms": [
+    {
+      "id": "night-1",
+      "day": "DAY 01",
+      "date": "OCT 11",
+      "title": "Traditional Dance",
+      "titleTe": "సాంప్రదాయ నృత్యం",
+      "desc": "Devotional group and solo performances beneath the festival lights.",
+      "descTe": "ఉత్సవ దీపాల వెలుగులో భక్తి భావంతో బృంద మరియు వ్యక్తిగత నృత్య ప్రదర్శనలు.",
+      "image": "/images/games/game-dance.jpg"
+    },
+    {
+      "id": "night-2",
+      "day": "DAY 02",
+      "date": "OCT 12",
+      "title": "Chair Game",
+      "titleTe": "చైర్ గేమ్",
+      "desc": "A lively musical-chair challenge for all ages after the evening puja.",
+      "descTe": "సాయంత్రం పూజ అనంతరం అన్ని వయసుల వారికి సంగీతంతో ఉత్సాహభరితమైన చైర్ పోటీ.",
+      "image": "/images/games/game-chair.jpg"
+    },
+    {
+      "id": "night-3",
+      "day": "DAY 03",
+      "date": "OCT 13",
+      "title": "Brick Game",
+      "titleTe": "బ్రిక్ గేమ్",
+      "desc": "A nighttime balance and teamwork challenge filled with cheers.",
+      "descTe": "రాత్రి వేళ సందడి మధ్య సమతుల్యత మరియు జట్టు నైపుణ్యాన్ని పరీక్షించే ఆట.",
+      "image": "/images/games/game-brick.jpg"
+    },
+    {
+      "id": "night-4",
+      "day": "DAY 04",
+      "date": "OCT 14",
+      "title": "Muggula Pooti",
+      "titleTe": "ముగ్గుల పోటీ",
+      "desc": "Glowing rangoli creativity and festive colour in the evening celebrations.",
+      "descTe": "సాయంత్రపు ఉత్సవ వాతావరణంలో సంప్రదాయ ముగ్గులు, సృజనాత్మకత మరియు రంగుల పోటీ.",
+      "image": "/images/games/game-rangoli.webp"
+    },
+    {
+      "id": "night-5",
+      "day": "DAY 05",
+      "date": "OCT 15",
+      "title": "Tug of War",
+      "titleTe": "తాడు లాగుడు",
+      "desc": "Village teams compete under bright festival floodlights.",
+      "descTe": "ప్రకాశవంతమైన ఉత్సవ దీపాల కింద గ్రామ జట్లు తాడు లాగుడు పోటీలో తలపడతాయి.",
+      "image": "/images/games/tug-of-war-real.jpg"
+    },
+    {
+      "id": "night-6",
+      "day": "DAY 06",
+      "date": "OCT 16",
+      "title": "Food Challenge",
+      "titleTe": "ఫుడ్ ఛాలెంజ్",
+      "desc": "A cheerful night food challenge with enthusiastic community participation.",
+      "descTe": "రాత్రి వేడుకల్లో సమాజమంతా ఉత్సాహంగా పాల్గొనే ఆనందకరమైన ఆహార పోటీ.",
+      "image": "/images/games/game-food.jpg"
+    },
+    {
+      "id": "night-7",
+      "day": "DAY 07",
+      "date": "OCT 17",
+      "title": "Kabaddi",
+      "titleTe": "కబడ్డీ",
+      "desc": "High-energy village kabaddi under the festival lights.",
+      "descTe": "ఉత్సవ దీపాల కింద ఉత్సాహభరితమైన గ్రామ కబడ్డీ.",
+      "image": "/images/games/game-kabaddi.jpg"
+    },
+    {
+      "id": "night-8",
+      "day": "DAY 08",
+      "date": "OCT 18",
+      "title": "Volleyball",
+      "titleTe": "వాలీబాల్",
+      "desc": "A friendly night volleyball match under the festival lights.",
+      "descTe": "ఉత్సవ దీపాల వెలుగులో స్నేహపూర్వక రాత్రి వాలీబాల్ పోటీ.",
+      "image": "/images/games/game-volleyball.jpg"
+    },
+    {
+      "id": "night-9",
+      "day": "DAY 09",
+      "date": "OCT 19",
+      "title": "Fun Activities",
+      "titleTe": "సరదా కార్యక్రమాలు",
+      "desc": "A festive night of games, laughter and activities for the whole family.",
+      "descTe": "కుటుంబం మొత్తం కలిసి ఆనందించే రాత్రి ఆటలు, నవ్వులు మరియు సరదా కార్యక్రమాలు.",
+      "image": "/images/games/game-fun.jpg"
+    }
+  ]
+}

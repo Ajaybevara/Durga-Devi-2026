@@ -1,2 +1,2 @@
-import FestivalApp from '@/components/FestivalApp';
+import FestivalApp from '@/frontend/FestivalApp';
 export default function Page(){return <FestivalApp/>}
