@@ -430,7 +430,9 @@ body{overflow-x:hidden}
 
 @media(max-width:850px){
  .header:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 3px 26px,#ffda6d 0 3px,#9a0014 4px 6px,transparent 7px),radial-gradient(circle at calc(100% - 3px) 26px,#ffda6d 0 3px,#9a0014 4px 6px,transparent 7px),linear-gradient(90deg,#d9951b 0 2px,transparent 2px calc(100% - 2px),#d9951b calc(100% - 2px));opacity:.92;animation:ornamentGlow 3.2s ease-in-out infinite}
- .bottom-nav:before{content:"";position:absolute;z-index:-1;left:50%;top:-35px;width:106px;height:106px;border-radius:50%;transform:translateX(-50%);background:repeating-conic-gradient(from 0deg,rgba(218,148,24,.72) 0 2deg,transparent 2deg 9deg);-webkit-mask:radial-gradient(circle,transparent 0 35px,#000 36px 43px,transparent 44px);mask:radial-gradient(circle,transparent 0 35px,#000 36px 43px,transparent 44px);animation:mandalaTurn 22s linear infinite;filter:drop-shadow(0 0 6px rgba(225,154,32,.38))}
+ .bottom-nav:before{content:none}
+ .bottom-nav button:nth-child(3):before{content:"";position:absolute;z-index:0;inset:-15px;border:0;border-radius:50%;pointer-events:none;background:repeating-conic-gradient(from 0deg,#d9961d 0 2deg,transparent 2deg 9deg);-webkit-mask:radial-gradient(circle,transparent 0 39px,#000 40px 47px,transparent 48px);mask:radial-gradient(circle,transparent 0 39px,#000 40px 47px,transparent 48px);animation:navMandalaTurn 18s linear infinite;filter:drop-shadow(0 0 5px rgba(225,154,32,.46));transform-origin:50% 50%}
+ .bottom-nav button:nth-child(3)>svg,.bottom-nav button:nth-child(3)>span{position:relative;z-index:1}
  .bottom-nav button:nth-child(3):after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(255,216,109,.72);animation:navRing 2.6s ease-out infinite}
 }
 
@@ -447,11 +449,12 @@ body{overflow-x:hidden}
 
 @keyframes ornamentGlow{50%{opacity:.62;filter:drop-shadow(0 0 7px rgba(255,179,37,.75))}}
 @keyframes mandalaTurn{to{transform:translateX(-50%) rotate(360deg)}}
+@keyframes navMandalaTurn{to{transform:rotate(360deg)}}
 @keyframes navRing{0%{transform:scale(.82);opacity:.8}75%,100%{transform:scale(1.18);opacity:0}}
 @keyframes heroSheen{0%,55%{transform:translateX(-65%)}85%,100%{transform:translateX(65%)}}
 @keyframes copyRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
-@media(prefers-reduced-motion:reduce){.header:before,.bottom-nav:before,.bottom-nav button:nth-child(3):after,.festival-hero .hero-content:before,.festival-hero .hero-content>*{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.header:before,.bottom-nav:before,.bottom-nav button:nth-child(3):before,.bottom-nav button:nth-child(3):after,.festival-hero .hero-content:before,.festival-hero .hero-content>*{animation:none!important}}
 @media(hover:none),(pointer:coarse){.contribution-card:hover .contribution-inner,.contribution-card:focus-visible .contribution-inner{transform:none}.contribution-card.mobile-flipped .contribution-inner{transform:rotateY(180deg)}}
 @media(prefers-reduced-motion:reduce){.principal-donor-photo,.contribution-inner,.contribution-visual img{transition:none!important}}
 
@@ -1541,3 +1544,106 @@ footer{position:relative}.footer-admin-link{position:absolute;right:clamp(14px,3
 }
 @keyframes mobileMenuOpen{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
 @media(prefers-reduced-motion:reduce){.header>.mobile-menu{animation:none!important}}
+
+/* Simple PhonePe handoff: no QR, form, or payment credentials are collected. */
+.payment-panel.phonepe-only{align-items:stretch}
+.phonepe-payment-card{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;padding:clamp(28px,5vw,56px);border:1px solid #e4c477;border-radius:22px;background:linear-gradient(145deg,#fffdf5,#fff1cb);text-align:center;box-shadow:0 18px 42px rgba(102,34,0,.1)}
+.phonepe-payment-card>svg{width:48px;height:48px;padding:12px;border-radius:50%;background:#700071;color:#fff}
+.phonepe-payment-card>small{margin-top:18px;color:#9b6400;font-size:10px;font-weight:900;letter-spacing:.14em}
+.phonepe-payment-card>a[href^="tel:"]{margin:8px 0;color:#700071;font-size:clamp(34px,5vw,54px);font-weight:900;line-height:1.05;text-decoration:none;letter-spacing:.035em}
+.phonepe-payment-card>p{max-width:520px;margin:6px 0 24px;color:#6f5147;font-size:14px;line-height:1.65}
+.phonepe-payment-card .whatsapp-payment{width:min(100%,430px);justify-content:center}
+
+/* Keep desktop card content inside every card at intermediate viewport widths. */
+@media(min-width:901px) and (max-width:1250px){
+ .home-daywise .sacred-flip-card{flex-basis:calc((100% - 28px)/3)}
+ .premium-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .contribution-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .night-card-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+@media(max-width:900px){.payment-panel.phonepe-only{grid-template-columns:1fr}.phonepe-payment-card{padding:30px 20px}}
+@media(max-width:430px){.phonepe-payment-card>a[href^="tel:"]{font-size:32px}.phonepe-payment-card{border-radius:16px}.phonepe-payment-card>p{font-size:13px}}
+
+/* Let vertical page scrolling pass through the horizontal Pavitra Pujalu rail. */
+@media(max-width:680px){
+ .puja-card-grid{
+  touch-action:pan-x pan-y pinch-zoom!important;
+  overscroll-behavior:auto!important;
+  scroll-snap-type:x proximity!important;
+ }
+ .puja-card-grid article{scroll-snap-stop:normal!important}
+}
+
+/* Gallery year tagline: readable over the temple artwork at every width. */
+.highlights-only .section-heading p{
+ display:inline-block;
+ max-width:min(92vw,720px);
+ margin:8px auto 0!important;
+ padding:10px 20px;
+ border:1px solid rgba(151,71,0,.3);
+ border-radius:999px;
+ background:rgba(255,250,237,.9);
+ color:#6d0010!important;
+ font-size:clamp(14px,1.8vw,18px)!important;
+ font-weight:800!important;
+ line-height:1.5!important;
+ letter-spacing:.015em;
+ text-shadow:0 1px #fff;
+ box-shadow:0 9px 24px rgba(91,25,0,.12);
+ backdrop-filter:blur(8px);
+}
+@media(max-width:480px){
+ .highlights-only .section-heading p{padding:9px 14px;border-radius:16px;font-size:14px!important}
+}
+
+/* Complete day-card content: no clipped puja names or hidden action rows. */
+.home-daywise .sacred-flip-card{height:390px!important}
+.home-daywise .sacred-card-front{grid-template-rows:150px minmax(0,1fr)!important}
+.home-daywise .sacred-card-copy{min-height:0;padding:18px!important}
+.home-daywise .sacred-card-copy>div{gap:10px!important}
+.home-daywise .sacred-card-copy>div span{
+ grid-template-columns:16px minmax(0,1fr)!important;
+ align-content:start;
+ min-width:0;
+}
+.home-daywise .sacred-card-copy>div span strong{
+ grid-column:1/-1;
+ width:100%!important;
+ min-height:28px;
+ margin-top:4px;
+ padding:5px 7px!important;
+ overflow:visible!important;
+ white-space:normal!important;
+ text-overflow:clip!important;
+ overflow-wrap:anywhere;
+ line-height:1.35!important;
+}
+.home-daywise .sacred-card-copy .card-hint{margin-top:10px!important}
+@media(max-width:560px){
+ .home-daywise .sacred-flip-card{height:385px!important}
+ .home-daywise .sacred-card-front{grid-template-rows:145px minmax(0,1fr)!important}
+ .home-daywise .sacred-card-copy{padding:17px 16px!important}
+}
+
+/* Phone cards use their own stable geometry; never inherit desktop heights. */
+@media(max-width:680px){
+ .home-daywise .sacred-flip-card{height:520px!important}
+ .home-daywise .sacred-card-front{grid-template-rows:245px minmax(0,1fr)!important}
+ .home-daywise .event-card-photo{height:245px!important}
+ .home-daywise .sacred-card-copy{padding:20px 18px!important}
+ .home-daywise .sacred-card-copy h3{
+  display:block!important;
+  min-height:58px!important;
+  margin:8px 0 12px!important;
+  color:#65000d!important;
+  line-height:1.3!important;
+ }
+ .home-daywise .sacred-card-copy .card-hint{min-height:42px;margin-top:10px!important}
+}
+@media(max-width:430px){
+ .home-daywise .sacred-flip-card{height:530px!important}
+ .home-daywise .sacred-card-front{grid-template-rows:230px minmax(0,1fr)!important}
+ .home-daywise .event-card-photo{height:230px!important}
+ .home-daywise .sacred-card-copy{padding:18px 16px!important}
+}
+@media(max-width:340px){.home-daywise .sacred-flip-card{height:540px!important}}
