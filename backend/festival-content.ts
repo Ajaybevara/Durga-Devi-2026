@@ -32,10 +32,8 @@ export const defaultFestivalContent:FestivalContent={
  ].map((x,i)=>({id:`night-${i+1}`,day:x[0],date:x[1],title:x[2],titleTe:x[3],desc:x[4],descTe:x[5],image:x[6]}))
 };
 
-const STORAGE_KEY='durga-festival-content-v1';
 export function getLocalFestivalContent():FestivalContent{
- if(typeof window==='undefined')return defaultFestivalContent;
- try{return {...defaultFestivalContent,...JSON.parse(localStorage.getItem(STORAGE_KEY)||'{}')}}catch{return defaultFestivalContent}
+ return defaultFestivalContent;
 }
 export async function loadFestivalContent():Promise<FestivalContent>{
  const local=getLocalFestivalContent();
@@ -43,11 +41,10 @@ export async function loadFestivalContent():Promise<FestivalContent>{
  return local;
 }
 export async function saveFestivalSection<K extends keyof FestivalContent>(section:K,payload:FestivalContent[K]){
- const next={...getLocalFestivalContent(),[section]:payload};
- localStorage.setItem(STORAGE_KEY,JSON.stringify(next));
- window.dispatchEvent(new CustomEvent('festival-content-updated',{detail:next}));
  const response=await fetch('/api/admin/content',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({section,payload})});
- const result=await response.json();if(!response.ok)throw new Error(result.error||'Unable to publish content.');return result;
+ const result=await response.json();
+ if(!response.ok)throw new Error(result.error||'Unable to publish content.');
+ return result;
 }
 export async function uploadFestivalMedia(file:File,folder:string){
  const body=new FormData();body.append('file',file);body.append('folder',folder);

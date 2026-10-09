@@ -16,9 +16,10 @@ const mimeTypes:Record<string,string>={
  '.webp':'image/webp'
 };
 
-export async function GET(_request:Request,{params}:{params:{path:string[]}}){
+export async function GET(_request:Request,{params}:{params:Promise<{path:string[]}>}){
+ const {path:requestedPath}=await params;
  const uploadRoot=path.resolve(process.cwd(),'public','admin-uploads');
- const requested=path.resolve(uploadRoot,...params.path);
+ const requested=path.resolve(uploadRoot,...requestedPath);
  if(requested!==uploadRoot&&!requested.startsWith(`${uploadRoot}${path.sep}`))return NextResponse.json({error:'Invalid media path.'},{status:400});
  try{
   const body=await fs.readFile(requested);

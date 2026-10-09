@@ -1,8 +1,10 @@
 node_modules/
 .env*.local
+.env
 .media-tools/
 .next/
 out/
+*.tsbuildinfo
 .sites-runtime/
 *.mp4
 *.mp3
